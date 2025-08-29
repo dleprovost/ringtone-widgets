@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <ImageView
+        android:id="@+id/ringtonewidgeticon1"
+        android:src="@drawable/ic_ringtone"
+        android:contentDescription="@string/ringtone"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scaleType="fitCenter"/>
+
+    <ImageView
+        android:id="@+id/ringtonewidgeticon2"
+        android:src="@drawable/ic_vibrate"
+        android:contentDescription="@string/vibrate"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scaleType="fitCenter"/>
+
+    <ImageView
+        android:id="@+id/ringtonewidgeticon3"
+        android:src="@drawable/ic_silence"
+        android:contentDescription="@string/silence"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scaleType="fitCenter"/>
+
+</LinearLayout>

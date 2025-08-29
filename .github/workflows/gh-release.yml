@@ -1,0 +1,74 @@
+name: GitHub Release
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v5
+
+      - name: Setup JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Build release APKs
+        run: ./gradlew clean check assembleRelease
+
+      - name: Sign APKs
+        id: signing
+        run: |
+          APP_NAME="RingtoneWidgets"
+          VERSION_TAG="${GITHUB_REF_NAME}"
+          BUILD_TOOLS_VERSION=$(ls $ANDROID_SDK_ROOT/build-tools | sort -V | tail -n1)
+          echo "Using build-tools version: $BUILD_TOOLS_VERSION"
+          
+          UNSIGNED_NAME="${APP_NAME}-${VERSION_TAG}-release-unsigned.apk"
+          SIGNED_NAME="${APP_NAME}-${VERSION_TAG}.apk"
+          echo "Signing ${UNSIGNED_NAME} -> ${SIGNED_NAME}"
+
+          RELEASE_PATH="app/build/outputs/apk/release/"
+          UNSIGNED_APK="${RELEASE_PATH}${UNSIGNED_NAME}"
+          SIGNED_APK="${RELEASE_PATH}${SIGNED_NAME}"
+
+          KEY_ALIAS="${{ secrets.KEY_ALIAS }}"
+          KEYSTORE_PASSWORD="${{ secrets.KEYSTORE_PASSWORD }}"
+          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > my-release-key.jks
+          "${ANDROID_SDK_ROOT}/build-tools/${BUILD_TOOLS_VERSION}/apksigner" sign \
+            --ks my-release-key.jks \
+            --ks-key-alias "${KEY_ALIAS}" \
+            --ks-pass pass:"${KEYSTORE_PASSWORD}" \
+            --out "${SIGNED_APK}" \
+            "${UNSIGNED_APK}"
+          echo "apk=${SIGNED_APK}" >> $GITHUB_OUTPUT
+
+      - name: Compute changelog path
+        id: changelog
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          MAJOR="${VERSION%%.*}"
+          MINOR="${VERSION##*.}"
+          MINOR_PAD=$(printf "%02d" "$MINOR")
+          FILE="metadata/en-US/changelogs/${MAJOR}${MINOR_PAD}.txt"
+          echo "Changelog path = ${FILE}"
+          echo "file=${FILE}" >> $GITHUB_OUTPUT
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          body_path: ${{ steps.changelog.outputs.file }}
+          files: ${{ steps.signing.outputs.apk }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,1 @@
+Widgets minimalistes de contrôle du mode de sonnerie : sonnerie, vibreur ou silencieux en un appui.

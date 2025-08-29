@@ -1,0 +1,2 @@
+Ringtone Widgets est une application Android minimaliste qui fournit des widgets simples pour passer minimaliste du mode Sonnerie au mode Vibreur et au mode Silencieux.
+L'application est légère, open-source, sans publicité et sans services en arrière-plan.

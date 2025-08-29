@@ -1,0 +1,5 @@
+* Première Release
+* Widgets légers et minimalistes (1x2 et 2x1)
+* Trois boutons : Sonnerie, Vibreur, Silencieux
+* Personnalisation des couleurs des icônes des widgets
+* Localisation en anglais et en français

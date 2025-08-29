@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="about">À propos de Ringtone Widgets</string>
+    <string name="about_contrib">Les contributions sont les bienvenues sur GitHub :</string>
+    <string name="about_description">Ringtone Widgets vous permet de basculer rapidement entre les modes sonnerie, vibreur et silence directement depuis votre écran d\'accueil, à l\'aide de widgets minimalistes.</string>
+    <string name="about_limitations">En raison des restrictions d\'Android, les widgets ne peuvent pas activer le mode « silencieux » du système. Ils utilisent plutôt le mode « Ne pas déranger » (DND).\nDe plus, l\'état du widget ne se met pas à jour automatiquement si le mode est modifié ailleurs. Ce comportement est normal et attendu.</string>
+    <string name="about_thanks">Merci d\'utiliser Ringtone Widgets!</string>
+    <string name="apply">Appliquer</string>
+    <string name="close">Fermer</string>
+    <string name="color_choice">Choix de la couleur</string>
+    <string name="give_permission">Attribuer la permission</string>
+    <string name="horizontal_description">Ringtone Widget horizontal</string>
+    <string name="open">Ouvrir</string>
+    <string name="permission_description">Pour activer le mode silencieux, vous devez autoriser Ne pas déranger (DND).</string>
+    <string name="permission_required">Autorisation requise</string>
+    <string name="preview_icon">Icône d\'aperçu</string>
+    <string name="ringtone">Sonnerie</string>
+    <string name="selected_color">Couleur d\'élément sélectionné</string>
+    <string name="silence">Silence</string>
+    <string name="unselected_color">Couleur d\'élément non sélectionné</string>
+    <string name="vertical_description">Ringtone Widget vertical</string>
+    <string name="vibrate">Vibreur</string>
+</resources>

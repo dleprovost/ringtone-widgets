@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name" translatable="false">Ringtone Widgets</string>
+    <string name="about">About Ringtone Widgets</string>
+    <string name="about_contrib">Contributions are welcome on GitHub:</string>
+    <string name="about_description">Ringtone Widgets lets you quickly switch between ring, vibrate, and silent modes right from your home screen, using minimalist widgets.</string>
+    <string name="about_limitations">Due to Android restrictions, the widgets cannot enable the system’s “silent” mode. Instead, they rely on Do Not Disturb (DND).\nAlso, the widget’s state will not automatically update if the mode is changed elsewhere. This is normal and expected behavior.</string>
+    <string name="about_thanks">Thank you for using Ringtone Widgets!</string>
+    <string name="apply">Apply</string>
+    <string name="close">Close</string>
+    <string name="color_choice">Color choice</string>
+    <string name="give_permission">Give permission</string>
+    <string name="horizontal_description">Horizontal Ringtone Widget</string>
+    <string name="open">Open</string>
+    <string name="permission_description">To enable Silent Mode, you must allow Do Not Disturb.</string>
+    <string name="permission_required">Permission required</string>
+    <string name="preview_icon">Preview icon</string>
+    <string name="ringtone">Ringtone</string>
+    <string name="selected_color">Selected item color</string>
+    <string name="silence">Silence</string>
+    <string name="unselected_color">Unselected item color</string>
+    <string name="vertical_description">Vertical Ringtone Widget</string>
+    <string name="vibrate">Vibrate</string>
+</resources>

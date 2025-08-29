@@ -1,0 +1,1 @@
+Minimalist widgets for controlling ring mode: ringtone, vibrate, or silent with a single tap.

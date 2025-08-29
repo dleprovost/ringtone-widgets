@@ -1,0 +1,2 @@
+Ringtone Widgets is a minimalist Android app that provides quick home-screen widgets to switch between Ringer, Vibrate, and Silent modes.
+The application is lightweight, open-source, ad-free, and has no background services.
