@@ -1,6 +1,6 @@
 [versions]
 activity = "1.10.1"
-agp = "8.12.2"
+agp = "8.11.1"
 appcompat = "1.7.1"
 baselineprofile = "1.4.0"
 colorpickerview = "2.3.0"
